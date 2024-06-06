@@ -9,3 +9,14 @@ spring:
   h2:
     console:
       enabled: true
+  mail:
+    host: "smtp.mailtrap.io"
+    port: 587
+    username: "79a2693eeef9a8"
+    password: "62afe2726b30b1"
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
