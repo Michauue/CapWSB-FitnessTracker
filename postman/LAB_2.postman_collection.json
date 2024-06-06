@@ -1,0 +1,172 @@
+{
+	"info": {
+		"_postman_id": "b9585834-ea53-4670-a920-ba951bc44f21",
+		"name": "LAB_2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22964800"
+	},
+	"item": [
+		{
+			"name": "get all trainings",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/v1/trainings",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"v1",
+						"trainings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add new training",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": 1,\r\n    \"startTime\": \"2024-06-01T10:00:00Z\",\r\n    \"endTime\": \"2024-06-01T11:00:00Z\",\r\n    \"activityType\": \"RUNNING\",\r\n    \"distance\": 10.5,\r\n    \"averageSpeed\": 8.2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/v1/trainings",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"v1",
+						"trainings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all trainings by specific user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/v1/trainings/user/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"v1",
+						"trainings",
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all trainings by specific user Copy",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"distance\": 12.5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/v1/trainings/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"v1",
+						"trainings",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get trainings before specific date",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/v1/trainings/endedBefore?date=2024-01-15",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"v1",
+						"trainings",
+						"endedBefore"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2024-01-15"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get trainings before specific date Copy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/v1/trainings/activity/CYCLING",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"v1",
+						"trainings",
+						"activity",
+						"CYCLING"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
